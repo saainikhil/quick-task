@@ -5,13 +5,13 @@
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=for-the-badge&logo=flask&logoColor=white)
 
-## 📋 Project Overview
+##  Project Overview
 
 This project demonstrates a **production-ready containerized Flask application** with automated CI/CD pipeline. The application is built with Python Flask, containerized using Docker, orchestrated with Docker Compose, and automatically built and pushed to Docker Hub via GitHub Actions.
 
 ---
 
-## 🏗️ Architecture Diagram
+##  Architecture Diagram
 
 ```mermaid
 graph TB
@@ -46,7 +46,7 @@ graph TB
 
 ---
 
-## 🎯 Application Features
+##  Application Features
 
 ### Endpoints
 
@@ -56,11 +56,11 @@ graph TB
 | `/health` | GET | Health check endpoint | `{"status": "UP"}` |
 
 ### Key Features
-- ✅ **Environment-driven configuration**: Port configured via `APP_PORT` environment variable
-- ✅ **Graceful failure**: Application exits with clear error if `APP_PORT` is not set
-- ✅ **Non-root user**: Runs as `appuser` for security
-- ✅ **Lightweight**: Uses Python 3.11-slim base image
-- ✅ **Logging**: All logs output to stdout/stderr
+-  **Environment-driven configuration**: Port configured via `APP_PORT` environment variable
+-  **Graceful failure**: Application exits with clear error if `APP_PORT` is not set
+-  **Non-root user**: Runs as `appuser` for security
+-  **Lightweight**: Uses Python 3.11-slim base image
+-  **Logging**: All logs output to stdout/stderr
 
 ---
 
@@ -70,17 +70,17 @@ graph TB
 
 This is one of the most critical aspects of containerized applications:
 
-#### 1️⃣ **Application Port (5000)**
+#### 1️ **Application Port (5000)**
 - **What**: The port Flask application binds to inside the container
 - **Why**: Set via `APP_PORT` environment variable
 - **Code**: `app.run(host="0.0.0.0", port=int(PORT))`
 
-#### 2️⃣ **Container Port (5000)**
+#### 2️ **Container Port (5000)**
 - **What**: The port exposed by the Docker container
 - **Why**: Declared in Dockerfile with `EXPOSE ${APP_PORT}`
 - **Purpose**: Documents which port the container listens on
 
-#### 3️⃣ **Host Port (9090)**
+#### 3️ **Host Port (9090)**
 - **What**: The port on your local machine
 - **Why**: Mapped in docker-compose.yml as `"9090:5000"`
 - **Access**: You access the app at `http://localhost:9090`
@@ -107,7 +107,7 @@ Browser → localhost:9090 → Docker maps to → Container:5000 → Flask App l
 
 ---
 
-## 🐳 Docker Configuration
+##  Docker Configuration
 
 ### Dockerfile Breakdown
 
@@ -133,7 +133,7 @@ Excludes unnecessary files from the Docker build context:
 
 ---
 
-## 🚀 Docker Compose
+##  Docker Compose
 
 ### Why Docker Compose?
 
@@ -158,7 +158,7 @@ services:
 
 ---
 
-## 🔄 CI/CD Pipeline
+##  CI/CD Pipeline
 
 ### GitHub Actions Workflow
 
@@ -206,12 +206,11 @@ The pipeline automatically runs on every push/PR to `main`:
 
 ---
 
-## 📦 Setup & Usage
+##  Setup & Usage
 
 ### Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (must be running)
-- [Git](https://git-scm.com/)
 - [Docker Hub Account](https://hub.docker.com/r/saainikhil/quick-task/tags)
 
 ### Local Development
@@ -255,7 +254,7 @@ docker rm quick-app
 
 ---
 
-## 🔐 GitHub Secrets Configuration
+##  GitHub Secrets Configuration
 
 For the CI/CD pipeline to work, add these secrets to your GitHub repository:
 
@@ -266,7 +265,7 @@ For the CI/CD pipeline to work, add these secrets to your GitHub repository:
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Manual Testing
 
@@ -295,7 +294,7 @@ curl http://localhost:9090/ | jq .listening_port
 
 ---
 
-## 🎨 Design Decisions
+##  Design Decisions
 
 ### 1. **Python 3.11-slim Base Image**
    - **Decision**: Use `python:3.11-slim` instead of full Python image
@@ -329,7 +328,7 @@ curl http://localhost:9090/ | jq .listening_port
 
 ---
 
-## 🚧 Future Improvements
+##  Future Improvements
 
 Given more time, I would implement:
 
@@ -371,7 +370,7 @@ Given more time, I would implement:
 
 ---
 
-## 📊 Project Structure
+##  Project Structure
 
 ```
 quick-task/
