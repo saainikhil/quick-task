@@ -212,7 +212,7 @@ The pipeline automatically runs on every push/PR to `main`:
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (must be running)
 - [Git](https://git-scm.com/)
-- [Docker Hub Account](https://hub.docker.com/)
+- [Docker Hub Account](https://hub.docker.com/r/saainikhil/quick-task/tags)
 
 ### Local Development
 
