@@ -387,3 +387,10 @@ quick-task/
 ```
 
 --
+## Conclusion
+
+This project demonstrates a simple HTTP application running inside a Docker container using Docker Compose.
+The application reads its port from an environment variable and exposes the required endpoints.
+Clear port mapping shows how traffic flows from the host to the containerized application.
+The CI pipeline automates building and pushing the Docker image to Docker Hub.
+All requirements of the assessment are successfully met.
