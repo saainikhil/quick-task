@@ -64,7 +64,7 @@ graph TB
 
 ---
 
-## 🔌 Port Configuration & Networking
+##  Port Configuration & Networking
 
 ### Understanding the Port Flow
 
